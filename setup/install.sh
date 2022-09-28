@@ -31,8 +31,8 @@ if [ ! "$(php -m | grep redis)" ]; then
 fi
 
 # Enable redis php extension in custom php.ini (if not enabled yet)
-if [ ! "$(cat /usr/local/lib/php.conf.d/20-custom.ini | grep redis.so)" ]; then
-    echo -e "\n; Redis\nextension=redis.so" >> /usr/local/lib/php.conf.d/20-custom.ini
+if [ ! "$(cat /usr/local/php81/lib/php.conf.d/10-directadmin.ini | grep redis.so)" ]; then
+    echo -e "\n; Redis\nextension=redis.so" >> /usr/local/php81/lib/php.conf.d/10-directadmin.ini
 fi
 
 # Restart apache
